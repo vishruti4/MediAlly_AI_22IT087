@@ -23,3 +23,7 @@ jobs:
     - name: Test frontend
       run: |
         pytest frontend/tests
+
+    - name: Lint backend only
+      run: |
+       flake8 backend
