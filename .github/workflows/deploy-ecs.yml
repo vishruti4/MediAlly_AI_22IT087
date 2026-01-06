@@ -40,7 +40,7 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition-family: ${{ env.TASK_DEFINITION_FAMILY }}
-        container-name: vb_trainee_cont_git
+        container-name: backend
         image: ${{ env.ECR_URI }}:${{ github.sha }}
 
     - name: Deploy ECS task definition
