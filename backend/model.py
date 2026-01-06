@@ -49,7 +49,7 @@ tokenizer = AutoTokenizer.from_pretrained(
 biobert_model = AutoModel.from_pretrained("dmis-lab/biobert-base-cased-v1.1").to(device)
 
 # ✅ Define model path
-MODEL_PATH = os.getenv("MODEL_PATH", r"C:\MediAlly_AI\backend\medially.pth")
+MODEL_PATH = os.getenv("MODEL_PATH", "/app/medially.pth")
 num_classes = 24  # Adjust based on dataset
 
 # ✅ Initialize symptom model
@@ -90,5 +90,6 @@ def predict_disease(text, label_encoder):
     top_prob, top_class = torch.topk(probabilities, 1)
     disease = label_encoder.inverse_transform([top_class[0].item()])[0]
     confidence = top_prob[0].item()
+
 
     return disease, confidence
