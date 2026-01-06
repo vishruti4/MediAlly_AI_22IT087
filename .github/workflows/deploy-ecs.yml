@@ -50,7 +50,7 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition-family: ${{ env.TASK_DEFINITION_FAMILY }}
-        container-name: backend
+        container-name: vb_trainee_cont_git
         image: $(aws ecr describe-repositories \
           --repository-names $ECR_REPOSITORY \
           --query 'repositories[0].repositoryUri' \
