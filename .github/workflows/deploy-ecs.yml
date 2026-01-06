@@ -51,10 +51,7 @@ jobs:
       with:
         task-definition-family: ${{ env.TASK_DEFINITION_FAMILY }}
         container-name: vb_trainee_cont_git
-        image: $(aws ecr describe-repositories \
-          --repository-names $ECR_REPOSITORY \
-          --query 'repositories[0].repositoryUri' \
-          --output text):${{ github.sha }}
+        image: ${{ env.ECR_URI }}:${{ github.sha }}
 
     - name: Deploy ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
