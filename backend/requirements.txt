@@ -6,3 +6,6 @@ python-dotenv
 torch
 transformers
 joblib
+scikit-learn
+numpy
+
