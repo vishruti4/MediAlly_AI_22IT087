@@ -10,7 +10,6 @@ env:
   ECS_CLUSTER: ${{ secrets.ECS_CLUSTER }}
   ECS_SERVICE: ${{ secrets.ECS_SERVICE }}
   TASK_DEFINITION_FAMILY: ${{ secrets.TASK_DEFINITION_FAMILY }}
-  ECR_URI: 372296823591.dkr.ecr.ap-south-1.amazonaws.com/vb_trainee_git
 
 jobs:
   deploy:
